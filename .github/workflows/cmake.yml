@@ -28,7 +28,6 @@ jobs:
     - name: setup sdk file
       shell: bash
       run: |
-        echo $PATH;
         curl -O https://npcap.com/dist/npcap-sdk-1.13.zip;
         unzip -d npcap-sdk-1.13        npcap-sdk-1.13.zip;
         ls -l;
@@ -52,6 +51,8 @@ jobs:
       with:
         name: artifact-tcpdump
         path: ./Release
+        compression-level: 9 # maximum compression
+        retention-days: 7
 
 
 
